@@ -3,10 +3,9 @@ using System.Collections;
 
 public class ResumeGameScript : MonoBehaviour {
 
-    public void Resume()
+    public void Resume()    // a resume script for the resume button on pause canvas.
     {
-        GetComponentInParent<Canvas>().enabled = false;
-        Time.timeScale = 1;   
-    }
-    
+        GetComponentInParent<Canvas>().enabled = false;  // turns pause screen off
+        Time.timeScale = 1;                               // resumes time
+    }   
 }
