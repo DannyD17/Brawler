@@ -4,7 +4,7 @@ using System.Collections;
 
 public class Pause : MonoBehaviour {
 
-    public bool isPause = false;
+    private bool isPause = false;
     public Canvas pauseMenu;
     
 
