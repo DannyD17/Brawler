@@ -7,7 +7,10 @@ public class RespawnOnCollision : MonoBehaviour {
 
 	void OnCollisionEnter(Collision other)
 	{
-		StartCoroutine (WaitToRespawn (other.collider));
+        if (other.collider.tag == "Player")
+        {
+            StartCoroutine(WaitToRespawn(other.collider));
+        }
 	}
 
 	IEnumerator WaitToRespawn(Collider other)
