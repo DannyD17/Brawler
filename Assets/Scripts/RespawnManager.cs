@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
-
-public class RespawnManager : MonoBehaviour {
+public class RespawnManager : MonoBehaviour
+{
 
     /*
      * this singleton is meant to move between scenes so that in the start up scene we can manage how many players and then in the Game scene we can manage respawn and lives.
@@ -75,8 +74,9 @@ public class RespawnManager : MonoBehaviour {
         }
         PlayerLives[PlayerNum]--;    //adjust the index down 1 and decrease the players lives by 1
 
-       // i need to add a return that is probably the respawn location
-        
+        // i need to add a return that is probably the respawn location
+
     }
     // need to create a method that destroys lives of characters who are not playing.
+
 }
