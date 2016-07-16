@@ -1,28 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/*
+ * This script is made to store player data such as Player number as well as health that can be used as a damage multiplier
+ * this script should interact with the RespawnManager Singleton 
+ * right now all this script does is store data on each character and should be connected to the character controler for each character
+ * 
+ */
+
+
+
 public class PlayerData : MonoBehaviour {
-
-    public int Lives = 3;
     public float health = 100;
-    // Use this for initialization
-
-    void OnCollisionEnter(Collision col)
-    {
-      if (col.collider.tag == "OutOfBounds")
-        {
-            Debug.Log("here i am");
-            Lives--;
-        }
-
-    }
-
-    // Update is called once per frame
-    void Update () {
-	
-        if (Lives == 0)
-        {
-            Destroy(gameObject);  // i need to change this   when destroyed unity get very very mad!!!!!
-        }
-	}
+    public int playerNumber;   // the player number 1-4 this is used in the Respawn manager and respawnOnCollision scripts
+    
 }
