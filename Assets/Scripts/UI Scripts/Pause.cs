@@ -4,46 +4,44 @@ using System.Collections;
 
 public class Pause : MonoBehaviour {
 
-    private bool isPause = false;
-    public Canvas pauseMenu;
-    
-
+    public bool isPause = false;
     void Start ()
     {
-        
-        pauseMenu.enabled = false;     // on Start have the game pause menu turned off.
+        GetComponent<Canvas>().enabled = false;
 
     }
 	
 	// Update is called once per frame
 	void Update () {
-
-        // !!!!!!!!!!!!!!!!!!!!!!!!!!!! must change keycode to controler input.
-
-        if (Input.GetKeyDown(KeyCode.Escape))    // when esc pressed in game the game will go to the pause menu
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            isPause = !isPause;                  // changes the bool that describes if the game is paused
+            isPause = !isPause;
 
-            if (isPause)                         //if the game is paused  (when paused this code is called)
+            if (isPause)
             {
                 Debug.Log("game has been paused");
-                Time.timeScale = 0;                       // pauses the game 
-                pauseMenu.enabled = true;  // turn on the canvas in front of the game
-               
+                GetComponent<Canvas>().enabled = true;
+                Time.timeScale = 0;
             }
             else
             {
-                pauseMenu.enabled = false;   // turns of canvas
-                Time.timeScale = 1;                       // resumes game
+                GetComponent<Canvas>().enabled = false;
+                Time.timeScale = 1;
             }
         }
     }
 
-    public void Resume()    // a resume script for the resume button on pause canvas.
-    {
-        isPause = !isPause;
-        pauseMenu.enabled = false;  // turns pause screen off
-        Time.timeScale = 1;                               // resumes time
-    }
+    //public void Resume()
+    //{
+    //    GetComponent<Canvas>().enabled = false;
+    //    Time.timeScale = 1;
+    //}
+    //public void ExitGame()
+    //{
+    //    {
+    //        Application.Quit();
 
+    //    }
+
+    //}
 }
