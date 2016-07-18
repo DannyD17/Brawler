@@ -7,7 +7,8 @@ public class Pause : MonoBehaviour {
     public bool isPause = false;
     void Start ()
     {
-        GetComponent<Canvas>().enabled = false;
+       // GetComponent<Canvas>().enabled = false;
+        GetComponentInParent<Canvas>().enabled = false;
 
     }
 	
@@ -20,12 +21,12 @@ public class Pause : MonoBehaviour {
             if (isPause)
             {
                 Debug.Log("game has been paused");
-                GetComponent<Canvas>().enabled = true;
+                GetComponentInParent<Canvas>().enabled = false;
                 Time.timeScale = 0;
             }
             else
             {
-                GetComponent<Canvas>().enabled = false;
+                GetComponentInParent<Canvas>().enabled = false;
                 Time.timeScale = 1;
             }
         }
