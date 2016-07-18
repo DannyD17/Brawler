@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using InControl;
 
 namespace Brawler
 {
@@ -7,6 +8,7 @@ namespace Brawler
     public class BaseCharacterController : MonoBehaviour
     {
 
+        public int playerNum;
 
         [Header("Steering")]
         [SerializeField]
@@ -293,16 +295,34 @@ namespace Brawler
         {
             // Handle input
 
-            moveDirection = new Vector3
-            {
-                x = Input.GetAxisRaw("Horizontal"),
-                y = 0.0f,
-                z = Input.GetAxisRaw("Vertical")
-            };
+            //moveDirection = new Vector3 //OLD
+            //{//OLD
+            //    x = Input.GetAxisRaw("Horizontal"),//OLD
+            //    y = 0.0f,//OLD
+            //    z = Input.GetAxisRaw("Vertical")//OLD
+            //};//OLD
 
-            jump = Input.GetButton("Jump");
+            //jump = Input.GetButton("Jump");//OLD
 
             // Rotate towards input movement direction
+            var inputDevice = (InputManager.Devices.Count > playerNum) ? InputManager.Devices[playerNum] : null;
+            if (inputDevice == null)
+            {
+                // If no controller exists for this cube, just make it translucent.
+           //     cubeRenderer.material.color = new Color(1.0f, 1.0f, 1.0f, 0.2f);
+            }
+            else
+            {
+              //  UpdateCubeWithInputDevice(inputDevice);
+            }
+            moveDirection = new Vector3
+            {
+                x = inputDevice.Direction.X,
+                y = 0.0f,
+                z = inputDevice.Direction.Y
+            };
+
+            jump = inputDevice.Action1;
 
             movement.Rotate(moveDirection, angularSpeed);
         }

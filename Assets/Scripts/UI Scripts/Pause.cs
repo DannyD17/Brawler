@@ -5,10 +5,11 @@ using System.Collections;
 public class Pause : MonoBehaviour {
 
     public bool isPause = false;
+    public Canvas PauseMenu;
     void Start ()
     {
-       // GetComponent<Canvas>().enabled = false;
-        GetComponentInParent<Canvas>().enabled = false;
+        
+        PauseMenu.enabled = false;
 
     }
 	
@@ -21,22 +22,22 @@ public class Pause : MonoBehaviour {
             if (isPause)
             {
                 Debug.Log("game has been paused");
-                GetComponentInParent<Canvas>().enabled = false;
+                PauseMenu.enabled = true;
                 Time.timeScale = 0;
             }
             else
             {
-                GetComponentInParent<Canvas>().enabled = false;
+                PauseMenu.enabled = false;
                 Time.timeScale = 1;
             }
         }
     }
 
-    //public void Resume()
-    //{
-    //    GetComponent<Canvas>().enabled = false;
-    //    Time.timeScale = 1;
-    //}
+    public void Resume()
+    {
+        PauseMenu.enabled = false;
+        Time.timeScale = 1;
+    }
     //public void ExitGame()
     //{
     //    {
