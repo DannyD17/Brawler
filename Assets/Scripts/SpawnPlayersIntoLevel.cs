@@ -4,15 +4,16 @@ using System.Collections;
 public class SpawnPlayersIntoLevel : MonoBehaviour {
 
     public GameObject playerAvatar;
-    public Transform spawnPosition;
+    public Transform[] spawnPosition;
 
-    void Update()
+    void Start()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        //if (Input.GetKeyDown(KeyCode.Z))
+        if (true)
         {
             for (int i = 0; i < GamePlayerManager.players.Length; i++)//InputManager.Devices.Count
             {
-                GamePlayerManager.Instance.SpawnPlayer(i, playerAvatar, spawnPosition);
+                GamePlayerManager.Instance.SpawnPlayer(i, playerAvatar, spawnPosition[i]);
             }
         }
     }
