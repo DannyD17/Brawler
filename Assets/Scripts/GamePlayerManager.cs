@@ -7,47 +7,57 @@ using Brawler;
 public class GamePlayerManager : MonoBehaviour {
 
     public GameObject playerAvatar;
+    public Transform spawnPosition;
     public static int playerNum = 0;
-    public static Player[] player = new Player[4];
+    public static Player[] players = new Player[4];
+    public static GamePlayerManager Instance;
 
     //public static List<InputManager> controllers;
 
     //private static int _prevDeviceCount = 0;
 
+    void Start() {
+        Instance = this;
+    }
 
         void Update() {
 
         for (int i = 0; i < InputManager.Devices.Count; i++)
         {
-            if (InputManager.Devices[i].Action1.WasPressed && player[i] == null)
+            if (InputManager.Devices[i].Action1.WasPressed && players[i] == null)
             {
-                player[i] = new Player(i);
-                player[i].player = Instantiate(playerAvatar, Vector3.zero, Quaternion.identity) as GameObject;
-                player[i].ChangeColor();
-                player[i].player.GetComponentInChildren<AnimatorCharacterController>().playerNum = player[i].playerNumber;
+                players[i] = new Player(i);
+                SpawnPlayer(i, playerAvatar, spawnPosition);
                 playerNum += 1;
-                Debug.Log(player[i]);
+                Debug.Log(players[i]);
             }
             if (InputManager.Devices[i].RightBumper.WasPressed)
             {
-                player[i].ChangeColor();
+                players[i].ChangeColor();
             }
             if (InputManager.Devices[i].Action2.WasPressed)
             {
-                Destroy(player[i].player);
-                player[i] = null;
+                Destroy(players[i].player);
+                players[i] = null;
                 playerNum -= 1;
             }
 
             if (InputManager.Devices[i].LeftBumper.WasPressed)
             {
-                Instantiate(player[i].player, Vector3.zero, Quaternion.identity);
+                SpawnPlayer(i, playerAvatar, spawnPosition);
             }
 
         }
 
-        var inputDevice = (InputManager.Devices.Count > playerNum) ? InputManager.Devices[playerNum] : null;
+    }
 
+    public void SpawnPlayer(int index, GameObject player, Transform position) {
+        if (players[index] == null)
+            return;
+
+        players[index].player = Instantiate(player, position.position, position.rotation) as GameObject;
+        players[index].SetColor();
+        players[index].player.GetComponentInChildren<AnimatorCharacterController>().playerNum = players[index].playerNumber;
     }
 
 }

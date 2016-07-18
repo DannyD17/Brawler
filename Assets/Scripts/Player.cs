@@ -1,20 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Brawler;
 
-public class Player : MonoBehaviour {
+public class Player {
 
     public int playerNumber { get; private set; }
     public Color playerColor { get; private set; }
     public bool _initialized = false;
     public GameObject player { get; set; }
-    private Renderer[] renderers;
+    
     
     public Player(int playerIDNumber)
     {
+        
         playerNumber = playerIDNumber;
         playerColor = Random.ColorHSV();
         _initialized = true;
         Debug.Log("Player Number: " + playerNumber + " player color: " + playerColor + "Initialized : " + _initialized);
+        
     }
 
     public void ChangeColor()
@@ -23,9 +26,9 @@ public class Player : MonoBehaviour {
         SetColor();
     }
 
-    private void SetColor() {
+    public void SetColor() {
 
-        renderers = player.GetComponentsInChildren<Renderer>();
+        Renderer[] renderers = player.GetComponentsInChildren<Renderer>();
 
         foreach (Renderer ren in renderers)
         {
@@ -33,6 +36,11 @@ public class Player : MonoBehaviour {
         }
 
         Debug.Log(playerColor);
+    }
+
+    private void InitializePlayer()
+    {
+
     }
 
     public void RemovePlayer()
