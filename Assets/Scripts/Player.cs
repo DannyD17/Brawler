@@ -12,7 +12,6 @@ public class Player {
     
     public Player(int playerIDNumber)
     {
-        
         playerNumber = playerIDNumber;
         playerColor = Random.ColorHSV();
         _initialized = true;
