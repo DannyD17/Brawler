@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using InControl;
+using System;
 
 namespace Brawler
 {
@@ -305,7 +306,8 @@ namespace Brawler
             //jump = Input.GetButton("Jump");//OLD
 
             // Rotate towards input movement direction
-            var inputDevice = (InputManager.Devices.Count > playerNum) ? InputManager.Devices[playerNum] : null;
+			try{
+			var inputDevice = (InputManager.Devices.Count > playerNum) ? InputManager.Devices[playerNum] : null;
             if (inputDevice == null)
             {
                 // If no controller exists for this cube, just make it translucent.
@@ -321,8 +323,12 @@ namespace Brawler
                 y = 0.0f,
                 z = inputDevice.Direction.Y
             };
-
-            jump = inputDevice.Action1;
+				jump = inputDevice.Action1;
+			} catch (Exception e){
+				moveDirection = Vector3.zero;
+				jump = false;
+			}
+            
 
             movement.Rotate(moveDirection, angularSpeed);
         }

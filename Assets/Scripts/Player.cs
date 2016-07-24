@@ -6,7 +6,7 @@ public class Player {
 
     public int playerNumber { get; private set; }
     public Color playerColor { get; private set; }
-    public bool _initialized = false;
+    private bool _initialized = false;
     public GameObject player { get; set; }
     
     
