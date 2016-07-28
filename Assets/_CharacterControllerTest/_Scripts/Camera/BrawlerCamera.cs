@@ -34,7 +34,7 @@ namespace Brawler
 
         private Vector3 cameraRelativePosition
         {
-            get { return targetTransform.position - transform.forward * distanceToTarget; }
+            get { return targetTransform.localPosition - transform.forward * distanceToTarget; }
         }
 
         public void OnValidate()
