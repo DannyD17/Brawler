@@ -1,0 +1,248 @@
+fileFormatVersion: 2
+guid: 7aad2bb7c5cdbf8458b26a622f5ab3fe
+timeCreated: 1468994292
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Box
+    100002: Box_MeshPart0
+    100004: Box_MeshPart1
+    100006: Box_MeshPart2
+    100008: Box_MeshPart3
+    100010: //RootNode
+    100012: Chain loop
+    100014: ChainLink002
+    100016: ChainLink003
+    100018: ChainLink004
+    100020: ChainLink005
+    100022: ChainLink006
+    100024: ChainLink008
+    100026: ChainLink009
+    100028: ChamferCyl001
+    100030: Chomp eye 1
+    100032: Chomp eye 2
+    100034: Chomp eye black 2
+    100036: Chomp eye black1
+    100038: Chomp head
+    100040: Ground
+    100042: Ground_MeshPart0
+    100044: Ground_MeshPart1
+    100046: Ground_MeshPart2
+    100048: Ground_MeshPart3
+    100050: Tooth template001
+    100052: Tooth template002
+    100054: Tooth template003
+    100056: Tooth template004
+    100058: Tooth template005
+    100060: Tooth template006
+    100062: Tooth template007
+    100064: Tooth template008
+    100066: Tooth template009
+    100068: Tooth template010
+    100070: Tooth template011
+    100072: Tooth template012
+    400000: Box
+    400002: Box_MeshPart0
+    400004: Box_MeshPart1
+    400006: Box_MeshPart2
+    400008: Box_MeshPart3
+    400010: //RootNode
+    400012: Chain loop
+    400014: ChainLink002
+    400016: ChainLink003
+    400018: ChainLink004
+    400020: ChainLink005
+    400022: ChainLink006
+    400024: ChainLink008
+    400026: ChainLink009
+    400028: ChamferCyl001
+    400030: Chomp eye 1
+    400032: Chomp eye 2
+    400034: Chomp eye black 2
+    400036: Chomp eye black1
+    400038: Chomp head
+    400040: Ground
+    400042: Ground_MeshPart0
+    400044: Ground_MeshPart1
+    400046: Ground_MeshPart2
+    400048: Ground_MeshPart3
+    400050: Tooth template001
+    400052: Tooth template002
+    400054: Tooth template003
+    400056: Tooth template004
+    400058: Tooth template005
+    400060: Tooth template006
+    400062: Tooth template007
+    400064: Tooth template008
+    400066: Tooth template009
+    400068: Tooth template010
+    400070: Tooth template011
+    400072: Tooth template012
+    2300000: Box_MeshPart0
+    2300002: Box_MeshPart1
+    2300004: Box_MeshPart2
+    2300006: Box_MeshPart3
+    2300008: Chain loop
+    2300010: ChainLink002
+    2300012: ChainLink003
+    2300014: ChainLink004
+    2300016: ChainLink005
+    2300018: ChainLink006
+    2300020: ChainLink008
+    2300022: ChainLink009
+    2300024: ChamferCyl001
+    2300026: Chomp eye 1
+    2300028: Chomp eye 2
+    2300030: Chomp eye black 2
+    2300032: Chomp eye black1
+    2300034: Chomp head
+    2300036: Ground_MeshPart0
+    2300038: Ground_MeshPart1
+    2300040: Ground_MeshPart2
+    2300042: Ground_MeshPart3
+    2300044: Tooth template001
+    2300046: Tooth template002
+    2300048: Tooth template003
+    2300050: Tooth template004
+    2300052: Tooth template005
+    2300054: Tooth template006
+    2300056: Tooth template007
+    2300058: Tooth template008
+    2300060: Tooth template009
+    2300062: Tooth template010
+    2300064: Tooth template011
+    2300066: Tooth template012
+    3300000: Box_MeshPart0
+    3300002: Box_MeshPart1
+    3300004: Box_MeshPart2
+    3300006: Box_MeshPart3
+    3300008: Chain loop
+    3300010: ChainLink002
+    3300012: ChainLink003
+    3300014: ChainLink004
+    3300016: ChainLink005
+    3300018: ChainLink006
+    3300020: ChainLink008
+    3300022: ChainLink009
+    3300024: ChamferCyl001
+    3300026: Chomp eye 1
+    3300028: Chomp eye 2
+    3300030: Chomp eye black 2
+    3300032: Chomp eye black1
+    3300034: Chomp head
+    3300036: Ground_MeshPart0
+    3300038: Ground_MeshPart1
+    3300040: Ground_MeshPart2
+    3300042: Ground_MeshPart3
+    3300044: Tooth template001
+    3300046: Tooth template002
+    3300048: Tooth template003
+    3300050: Tooth template004
+    3300052: Tooth template005
+    3300054: Tooth template006
+    3300056: Tooth template007
+    3300058: Tooth template008
+    3300060: Tooth template009
+    3300062: Tooth template010
+    3300064: Tooth template011
+    3300066: Tooth template012
+    4300000: ChainLink002
+    4300002: ChainLink003
+    4300004: ChainLink004
+    4300006: ChainLink005
+    4300008: ChainLink006
+    4300010: ChainLink008
+    4300012: ChainLink009
+    4300014: Box_MeshPart0
+    4300016: Box_MeshPart1
+    4300018: Box_MeshPart2
+    4300020: Box_MeshPart3
+    4300022: Chain loop
+    4300024: Ground_MeshPart0
+    4300026: Ground_MeshPart1
+    4300028: Ground_MeshPart2
+    4300030: Ground_MeshPart3
+    4300032: Chomp eye black1
+    4300034: Tooth template009
+    4300036: Chomp eye black 2
+    4300038: Tooth template002
+    4300040: Tooth template008
+    4300042: Chomp eye 1
+    4300044: Chomp eye 2
+    4300046: Tooth template012
+    4300048: Tooth template003
+    4300050: Tooth template010
+    4300052: Tooth template004
+    4300054: Tooth template011
+    4300056: Tooth template005
+    4300058: Tooth template006
+    4300060: Tooth template007
+    4300062: Tooth template001
+    4300064: Chomp head
+    4300066: ChamferCyl001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

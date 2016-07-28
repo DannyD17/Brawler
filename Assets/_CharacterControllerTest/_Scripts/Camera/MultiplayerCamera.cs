@@ -73,7 +73,7 @@ namespace Brawler
         }
 
 
-        private void Zoom()
+        private void Zoom() // Set distance accordingly
         {
             // Find the required size based on the desired position and smoothly transition to that size.
             float requiredSize = FindRequiredSize();

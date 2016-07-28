@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
 
+
 namespace Brawler
 {
     // Inherits from 'BaseCharacterController' and extends it to animate a character and move with or without root motion.
@@ -9,13 +10,17 @@ namespace Brawler
 
     public sealed class AnimatorCharacterController : BaseCharacterController
     {
+
         [Header("Animator")]
         public bool useRootMotion = true;
+
 
 
         private Animator _animator;
 
         private RootMotionController _rootMotionController;
+
+
 
         private void UpdateAnimator(Vector3 move)
         {
@@ -110,3 +115,4 @@ namespace Brawler
         }
     }
 }
+
