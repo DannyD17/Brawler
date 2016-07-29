@@ -27,7 +27,7 @@ public class Player {
 
     public void SetColor() {
 
-        Renderer[] renderers = player.GetComponentsInChildren<Renderer>();
+        Renderer[] renderers = player.GetComponentsInChildren<Renderer>(true);
 
         foreach (Renderer ren in renderers)
         {
