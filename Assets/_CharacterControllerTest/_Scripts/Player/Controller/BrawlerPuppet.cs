@@ -7,23 +7,27 @@ using Brawler;
 public class BrawlerPuppet : MonoBehaviour {
 
         public BehaviourPuppet puppet;
-        public AnimatorCharacterController animatorController;
-        public CharacterMovement characterMovement;
+      //  public AnimatorCharacterController animatorCharacterController;
+     //  public CharacterMovement characterMovement;
+       
+        
 
     public void OnLoseBalance()
     {
 
 
-        characterMovement.enabled = false;
-        animatorController.enabled = false;
-        puppet.puppetMaster.targetAnimator.SetLayerWeight(1, 0);
+    //  characterMovement.enabled = false;
+        Debug.Log("Character Input OFF");
+        //   animatorCharacterController.enabled = false;
+        puppet.puppetMaster.targetAnimator.enabled = false;
     }
 
     public void OnRegainBalance()
     {
 
-        characterMovement.enabled = true;
-        animatorController.enabled = true;
-        puppet.puppetMaster.targetAnimator.SetLayerWeight(1, 1f);
+      //  characterMovement.enabled = true;
+        Debug.Log("Character Input ON");
+        //   animatorCharacterController.enabled = true;
+        puppet.puppetMaster.targetAnimator.enabled = true;
     }
 }

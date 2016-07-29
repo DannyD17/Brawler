@@ -315,7 +315,7 @@ namespace Brawler
             {
               //  UpdateCubeWithInputDevice(inputDevice);
             }
-            moveDirection = new Vector3
+            moveDirection = new Vector3()
             {
                 x = inputDevice.Direction.X,
                 y = 0.0f,
@@ -326,6 +326,10 @@ namespace Brawler
 
             movement.Rotate(moveDirection, angularSpeed);
         }
+
+
+
+ 
 
 
     }
