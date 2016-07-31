@@ -32,13 +32,15 @@ public class MultiplayerCamera : MonoBehaviour
 	}
 
 	void FixedUpdate(){
-		
-		distance_to_target = MaxDistanceOfPlayers() * max_camera_distance; //Sets cam distance from scene
+ 
+        InitiateCamera();
+
+        distance_to_target = MaxDistanceOfPlayers() * max_camera_distance; //Sets cam distance from scene
 		distance_to_target = Mathf.Clamp (distance_to_target, min_cam_distance, max_camera_distance); //Clamps cam distance
 
         Vector3 camRelPos = CameraRelativePosition();
-
-        transform.position = Vector3.Lerp(transform.position, camRelPos, follow_speed * Time.deltaTime); //
+        if(_players != null)
+            transform.position = Vector3.Lerp(transform.position, camRelPos, follow_speed * Time.deltaTime); //
 	}
 
 	private Vector3 CameraRelativePosition(){
