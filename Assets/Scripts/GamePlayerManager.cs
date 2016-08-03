@@ -46,7 +46,7 @@ public class GamePlayerManager : MonoBehaviour {
                 playerNum -= 1;
             }
 
-            if (InputManager.Devices[i].LeftBumper.WasPressed && InputManager.Devices[i].Action4.WasPressed && InputManager.Devices[i].RightTrigger.WasPressed)
+            if (InputManager.Devices[i].LeftBumper && InputManager.Devices[i].Action4 && InputManager.Devices[i].RightTrigger.WasPressed)
             {
                 SpawnPlayer(i, playerAvatar, spawnPosition);
             }
