@@ -2,6 +2,7 @@
 using System.Collections;
 using Brawler;
 using RootMotion.FinalIK;
+using InControl;
 
 
 namespace Brawler
@@ -31,6 +32,7 @@ namespace Brawler
 
         private GameObject aimDirectionTarget;
         private Animator anim;
+        private int playerNum;
 
 
         // Input states
@@ -56,6 +58,7 @@ namespace Brawler
             aimDirectionTarget = GameObject.Find("Aim Direction IK Target");
             rightHandEffector = FullBodyBipedEffector.RightHand;
             leftHandEffector = FullBodyBipedEffector.LeftHand;
+            playerNum = GetComponentInParent<BaseCharacterController>().playerNum;
         }
 
 
@@ -66,11 +69,12 @@ namespace Brawler
 
             state.currentAction = anim.GetInteger("CurrentAction");
 
-
+            var inputDevice = (InputManager.Devices.Count > playerNum) ? InputManager.Devices[playerNum] : null;
 
             // Apply Right Punch
 
-            state.rightPunch = Input.GetKey(rightPunch) ? 1 : 0;
+            //state.rightPunch = Input.GetKey(rightPunch) ? 1 : 0;
+            state.rightPunch = inputDevice.RightTrigger ? 1 : 0;
             if (state.rightPunch == 1)
             {
                anim.SetLayerWeight(1, 1f);
@@ -90,8 +94,9 @@ namespace Brawler
 
             // Apply Left Punch
 
-            state.leftPunch = Input.GetKey(leftPunch) ? 1 : 0;
-           // (Input.GetKeyDown(leftPunch))
+            //state.leftPunch = Input.GetKey(leftPunch) ? 1 : 0;
+            state.leftPunch = inputDevice.LeftTrigger ? 1 : 0;
+            // (Input.GetKeyDown(leftPunch))
             if (state.leftPunch == 1)
             {
                 anim.SetLayerWeight(1, 1f);
@@ -109,8 +114,9 @@ namespace Brawler
 
             // Apply Jump Kick
 
-           state.jumpKick = Input.GetKey(jumpKick) ? 1 : 0;
-           //(Input.GetKeyDown(jumpKick))
+           //state.jumpKick = Input.GetKey(jumpKick) ? 1 : 0;
+            state.jumpKick = inputDevice.RightBumper.WasPressed ? 1 : 0;
+            //(Input.GetKeyDown(jumpKick))
             if (state.jumpKick == 1)
             {
                 anim.SetLayerWeight(2, 1f);
@@ -126,8 +132,9 @@ namespace Brawler
 
             // Apply Aim Direction with Right Stick Vertical. Goes back to Middle when in DeadZone. Middle(0) - Up(1) - Down(-1)
 
-            state.aimDirectionV = Input.GetAxis("RightStickV");
+            //state.aimDirectionV = Input.GetAxis("RightStickV");
 
+            state.aimDirectionV = inputDevice.RightStick.Y;
 
             if (state.aimDirectionV < 0)
             {
