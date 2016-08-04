@@ -5,7 +5,6 @@ public class SpawnPlayersIntoLevel : MonoBehaviour {
 
     public GameObject playerAvatar;
     public Transform[] spawnPosition;
-    public MultiplayerCamera cam;
 
     void Start()
     {
@@ -16,7 +15,6 @@ public class SpawnPlayersIntoLevel : MonoBehaviour {
             {
                 GamePlayerManager.Instance.SpawnPlayer(i, playerAvatar, spawnPosition[i]);
             }
-            cam.InitiateCamera();
         }
     }
 
