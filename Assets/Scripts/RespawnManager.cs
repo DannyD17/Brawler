@@ -62,17 +62,14 @@ public class RespawnManager : MonoBehaviour
     /// <param name="PlayerNumber"> The Player Number 1-4</param>
     public void PlayerDeath(int PlayerNumber)
     {
-        int PlayerNum;  // just initalizing
+       
 
-        if (PlayerNumber < 1 || PlayerNumber > 4)
+        if (PlayerNumber < 0 || PlayerNumber > 3)
         {
             throw new System.Exception("Character Numbers are off make sure your Characters are numbered 1-4");
         }
-        else
-        {
-            PlayerNum = PlayerNumber - 1;
-        }
-        PlayerLives[PlayerNum]--;    //adjust the index down 1 and decrease the players lives by 1
+      
+        PlayerLives[PlayerNumber]--;    //adjust the index down 1 and decrease the players lives by 1
 
         // i need to add a return that is probably the respawn location
 

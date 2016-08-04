@@ -52,15 +52,31 @@ public class MultiplayerCamera : MonoBehaviour
 
 	private Vector3 AveragePlayerPosition(){
         _average = Vector3.zero;
-		for (int i = 0; i < _players.Length; i++) {
-			_average += _players [i].transform.position;
-		}
-		_average /= _players.Length;
+        for (int i = 0; i < _players.Length; i++)
+        {
+            _average += _players[i].transform.position;
+        }
+        _average /= _players.Length;
 
-		_average.y = Mathf.Clamp (_average.y, clamp_min_y, clamp_max_y);
+        _average.y = Mathf.Clamp(_average.y, clamp_min_y, clamp_max_y);
 
-		return _average;
-	}
+        return _average;
+        //if (_players.Length == 0)
+        //    return Vector3.zero;
+        //if (_players.Length == 1)
+        //    return _players[0].transform.position;
+
+        //Bounds bounds = new Bounds(_players[0].transform.position, Vector3.zero);
+
+        //for (int i = 0; i < _players.Length; i++)
+        //{
+        //    bounds.Encapsulate(_players[i].transform.position);
+        //}
+
+        //Debug.DrawRay(bounds.center, Vector3.up);
+
+        //return bounds.center;
+    }
 
 	private float MaxDistanceOfPlayers(){
 		furthest_player_distance = 0f;
