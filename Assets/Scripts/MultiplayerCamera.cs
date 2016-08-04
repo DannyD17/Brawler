@@ -7,7 +7,7 @@ public class MultiplayerCamera : MonoBehaviour
 	public float _follow_speed = 3f; //Cam lerp speed
 	private Vector3 _average; //ave player position
 	private float furthest_player_distance; //from ave player position
-	private GameObject[] _players; //array of players
+	public GameObject[] _players; //array of players
 	public float clamp_min_y = -1f; //clamps min average position
 	public float clamp_max_y = 1f; //
 	public float max_camera_distance = 8f; 
@@ -25,26 +25,33 @@ public class MultiplayerCamera : MonoBehaviour
 	} 
 
 
-	void Start () {
-		_players = GameObject.FindGameObjectsWithTag ("Player"); 
+	public void InitiateCamera() {
+		_players = GameObject.FindGameObjectsWithTag ("CamTar"); 
 		_average = Vector3.zero;
 		furthest_player_distance = Vector3.zero.magnitude;
 	}
 
 	void FixedUpdate(){
-		
-		distance_to_target = MaxDistanceOfPlayers() * max_camera_distance; //Sets cam distance from scene
+ 
+        InitiateCamera();
+
+        distance_to_target = MaxDistanceOfPlayers() * max_camera_distance; //Sets cam distance from scene
 		distance_to_target = Mathf.Clamp (distance_to_target, min_cam_distance, max_camera_distance); //Clamps cam distance
 
-		transform.position = Vector3.Lerp(transform.position, CameraRelativePosition(), follow_speed * Time.deltaTime); //
+        Vector3 camRelPos = CameraRelativePosition();
+        if(_players != null)
+            transform.position = Vector3.Lerp(transform.position, camRelPos, follow_speed * Time.deltaTime); //
 	}
 
 	private Vector3 CameraRelativePosition(){
-		
-		return (AveragePlayerPosition() - transform.forward * distance_to_target);
+
+        Vector3 avgPlayerPos = AveragePlayerPosition();
+        
+        return (avgPlayerPos - transform.forward * distance_to_target);  // the vector we go to in the lerp. 
 	}
 
 	private Vector3 AveragePlayerPosition(){
+        _average = Vector3.zero;
 		for (int i = 0; i < _players.Length; i++) {
 			_average += _players [i].transform.position;
 		}
