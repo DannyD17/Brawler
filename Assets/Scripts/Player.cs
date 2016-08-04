@@ -8,6 +8,7 @@ public class Player {
     public Color playerColor { get; private set; }
     public bool _initialized = false;
     public GameObject player { get; set; }
+   // public int lives = 3;
     
     
     public Player(int playerIDNumber)

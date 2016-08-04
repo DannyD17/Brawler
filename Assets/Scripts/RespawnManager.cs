@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Brawler;
 
 public class RespawnManager : MonoBehaviour
 {
@@ -47,9 +48,11 @@ public class RespawnManager : MonoBehaviour
 
     public int[] PlayerLives = new int[4];
     public int NumberOfLives = 3;
+    
 
     void Start()
     {
+        
         for (int i = 0; i < 4; i++)
         {
             PlayerLives[i] = NumberOfLives;  // initialize the number of lives each player has. 
@@ -70,7 +73,23 @@ public class RespawnManager : MonoBehaviour
         }
       
         PlayerLives[PlayerNumber]--;    //adjust the index down 1 and decrease the players lives by 1
-
+        //GamePlayerManager.players[PlayerNumber].lives--;
+        //int playersAlive = 0;
+        //Player alive;
+        //for( int i = 0; i < GamePlayerManager.players.Length; i++)
+        //{
+        //    if (GamePlayerManager.players[i] != null && GamePlayerManager.players[i].lives != 0)
+        //    {
+        //        playersAlive++;
+        //        alive = GamePlayerManager.players[i];
+        //    }
+        //}
+        //if (playersAlive == 1)
+        //{
+        //    endOfGame.enabled = true;
+        //}
+        //else
+        //    endOfGame.enabled = false;
         // i need to add a return that is probably the respawn location
 
     }

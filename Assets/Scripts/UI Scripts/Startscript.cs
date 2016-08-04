@@ -6,7 +6,7 @@ public class Startscript : MonoBehaviour {
 
     public void onStartClick()
     {  
-        SceneManager.LoadScene(1);  // load scene by name
+        SceneManager.LoadScene(1, LoadSceneMode.Single);  // load scene by name
        
         // Debug.Log("start button was pressed");
 
