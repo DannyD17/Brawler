@@ -18,6 +18,10 @@ public class GamePlayerManager : MonoBehaviour {
 
     void Start() {
         Instance = this;
+        for (int i = 0; i < players.Length; i++)
+        {
+            players[i] = null;
+        }
     }
 
         void Update() {
@@ -42,7 +46,7 @@ public class GamePlayerManager : MonoBehaviour {
                 playerNum -= 1;
             }
 
-            if (InputManager.Devices[i].LeftBumper.WasPressed)
+            if (InputManager.Devices[i].LeftBumper && InputManager.Devices[i].Action4 && InputManager.Devices[i].RightTrigger.WasPressed)
             {
                 SpawnPlayer(i, playerAvatar, spawnPosition);
             }

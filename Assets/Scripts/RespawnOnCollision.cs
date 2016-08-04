@@ -4,6 +4,7 @@ public class RespawnOnCollision : MonoBehaviour
 {
     public Transform[] spawn_positions;
     public float seconds = 3;
+
     void OnCollisionEnter(Collision col)
     {
         if (col.collider.tag == "Player")
@@ -27,7 +28,7 @@ public class RespawnOnCollision : MonoBehaviour
 
         //trans.position = spawn_positions[index].position;
         //  other.transform.position = spawn_positions[index].position;
-        Debug.Log("position" + other.position);
+        Debug.Log(other.name + " name of the object");
         other.position = spawn_positions[index].position;
 
     }
